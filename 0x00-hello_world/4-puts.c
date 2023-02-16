@@ -3,7 +3,6 @@
 /**
  * main - Entry point 
  *
- * Description: prints "Programming is like building a mulitilingual puzzle"
  *
  * RETURN: Always 0 (sucess)
  */
