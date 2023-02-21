@@ -1,14 +1,12 @@
 #include "main.h"
-	/**
-	 * main - print _putchar
-	 * is written by mbah
-	 * Return: 0
-	 */
-
-
-	int main(void)
-	{
-	_putchar('_');
+/**
+ * main - prints _putchar
+ *
+ * Return: Always 0 in success
+ */
+int main(void)
+{
+	_putchar(95); /*95 is asci for _*/
 	_putchar('p');
 	_putchar('u');
 	_putchar('t');
@@ -17,6 +15,6 @@
 	_putchar('a');
 	_putchar('r');
 	_putchar('\n');
-	return (0);
-	}
 
+	return (0);
+}
