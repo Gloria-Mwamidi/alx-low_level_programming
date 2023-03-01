@@ -7,20 +7,20 @@
  */
 char *leet(char *str)
 {
-	int index
+	int indx1 = 0, indx2;
+	char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
 
-	for (index = 0; str[index] != '\0'; index++)
+	while (str[indx1])
 	{
-		if (str[index] == 'a' || str[index] == 'A'
-			str[index] = '4';
-		else if (str[index] == 'e' || str[index] == 'E'
-			str[index] = '3';
-		else if (str[index] == 'o' || str[index] == 'O'
-			str[index] = '0';
-		else if (str[index] == 't' || str[index] == 'T'
-			str[index] = '7';
-		else if (str[index] == 'l' || str[index] == 'L'
-			str[index] = '1';
+		for (indx2 = 0; indx2 <= 7; indx2++)
+		{
+			if (str[indx1] == leet[indx2] ||
+			    str[indx1] - 32 == leet[indx2])
+				str[indx1] = indx2 + '0';
+		}
+
+		indx1++;
 	}
-	return (str); // Return the encoded string
+
+	return (str);
 }
