@@ -4,9 +4,10 @@
  * @dest: input value
  * @src: input value
  * @n: input value
- * return: (dest)
+ *
+ * return: dest
  */
-char *_strncpy(char *dest, char *src, int n);
+char *_strncpy(char *dest, char *src, int n)
 {
 	int x;
 
@@ -14,12 +15,12 @@ char *_strncpy(char *dest, char *src, int n);
 	while (x < n && src[x] != '\0')
 	{
 		dest[x] = src[x];
-		x++
+		x++;
 	}
-	while x < n
+	while (x < n)
 	{
 		dest[x] != '\0';
-		x++
+		x++;
 	}
-	return (dest)
+	return (dest);
 }
