@@ -18,23 +18,36 @@ char *str_concat(char *s1, char *s2)
 		return ("");
 	if (s2 == NULL)
 		return ("");
-	for (x = 0; s1[x] != '\0'; x++)
+	x = y = 0;
 
-	for (y = 0; s2[y] != '\0'; y++)
+	while (s1[x] != '\0')
+	{
+	x++;
+	}
+
+	while (s2[y] != '\0')
+	{
+		y++;
+	}
 
 	con = malloc(sizeof(char) * (x + y + 1));
 
 		if (con == NULL)
 		return (NULL);
-	for (x = 0; s1[x] != '\0'; x++)
-	{
-	con[x] = s1[x];
-	}
-	for (y = 0; s2[y] != '\0'; y++)
-	{
-	con[x] = s2[y];
-	}
-	con[x] = '\0';
 
+		x = y = 0;
+
+while (s1[x] != '\0')
+{
+con[x] = s1[x];
+x++;
+}
+
+while (s2[y] != '\0')
+{con[x] = s2[y];
+y++;
+x++;
+}
+	con[x] = '\0';
 	return (con);
 }
