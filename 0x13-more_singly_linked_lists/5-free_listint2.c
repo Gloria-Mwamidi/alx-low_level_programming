@@ -2,7 +2,6 @@
 /**
  * free_listint2 - a function that frees a listint_t list.
  * @head: pointer to a node
- * @tmp: a temporary node
  *
  * Return: head as NULL
  */

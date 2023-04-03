@@ -2,7 +2,6 @@
 
 /**
  * free_listint - a function that frees a listint_t list
- * @tmp: temporary node
  * @head: pointer to a node
  *
  * Return: free node
