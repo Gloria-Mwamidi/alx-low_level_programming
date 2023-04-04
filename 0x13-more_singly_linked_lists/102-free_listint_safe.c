@@ -6,9 +6,9 @@
  *
  * Return: the number of nodes on success and 0 on failure
  */
-size_t loop_listint_count(listint_t *head)
+size_t loop_listint_count(const listint_t *head)
 {
-	listint_t *first, *last;
+	const listint_t *first, *last;
 	size_t len = 1;
 
 	if (head == NULL || head->next == NULL)
@@ -22,7 +22,7 @@ size_t loop_listint_count(listint_t *head)
 		if (first == last)
 		{
 			first = head;
-			while (first != hare)
+			while (first != last)
 			{
 				len++;
 				first = first->next;
