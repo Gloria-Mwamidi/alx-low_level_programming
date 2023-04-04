@@ -3,6 +3,7 @@
  * delete_nodeint_at_index -  function that deletes the node at
  * index index of a listint_t linked list.
  * @head: pointer to a node
+ * @index: position of a node
  *
  * Return: 1 on success and -1 on failure
  */
@@ -24,7 +25,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	tmp = *head;
 	prev_node = tmp;
-	for (i = 0; i < index; i++)
+	for (i = 0; i < (index - 1); i++)
 	{
 		prev_node = tmp;
 		tmp = tmp->next;
