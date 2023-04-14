@@ -37,32 +37,12 @@ int main(int argc, char *argv[])
 		}
 		size_read = read(file_from, buffer, 1024);
 		file_to = open(argv[2], O_WRONLY | O_APPEND);
-	}
-	while (size_read > 0);
+	} while (size_read > 0);
+
 	free(buffer);
 	end(file_from);
 	end(file_to);
 	return (0);
-}
-
-/**
- * end - a function that closes a file descriptor
- * @file_desc: the file descriptors to be closed
- *
- * Return: success (0)
- */
-
-int end(int file_desc)
-{
-	int fd;
-
-	fd = close(file_desc);
-	if (fd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close file fd %d\n", file_desc);
-		exit(100);
-	}
-		return (file_desc);
 }
 
 /**
@@ -85,4 +65,24 @@ char *set_buffer(char *file)
 	}
 
 	return (buffer);
+}
+
+/**
+ * end - a function that closes a file descriptor
+ * @file_desc: the file descriptors to be closed
+ *
+ * Return: success (0)
+ */
+
+int end(int file_desc)
+{
+	int fd;
+
+	fd = close(file_desc);
+	if (fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close file fd %d\n", file_desc);
+		exit(100);
+	}
+		return (file_desc);
 }
