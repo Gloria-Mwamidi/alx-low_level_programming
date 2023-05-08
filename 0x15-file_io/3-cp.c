@@ -65,12 +65,9 @@ int main(int argc, char argv[])
 		}
 		read_bytes = read(f_from, buf, 1024);
 		f_to = open(argv[2], O_WRONLY | O_APPEND);
-	}
-	while (read_bytes > 0);
-	{
+	} while (read_bytes > 0);
 		close(f_to);
 		close(f_from);
 		free(buf);
-	}
 	return (0);
 }
