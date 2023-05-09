@@ -1,16 +1,13 @@
 #include "main.h"
 /**
- * close_buffer - a function that creates the buffer and
- * closes a file descriptor
- * @filename: a pointer to the file
+ * close_buffer - a function that closes a file descriptor
  * @fd: the file descriptor to be closed
  *
- * Returns: buffer on success and errormessage on failure
+ * Returns: close fd on success
  */
-void close_buffer(const char *filename, int fd)
+void close_file(int fd)
 {
 	int file;
-	char *buf;
 
 	file = close(fd);
 	if (file == -1)
@@ -18,10 +15,22 @@ void close_buffer(const char *filename, int fd)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
+}
+
+/**
+ * create_buffer - a function that creates buffer
+ * @buf: varaiable representation of buffer
+ *
+ * Return: On success buf
+ */
+char *create_buffer(char *file)
+{
+	char *buf;
+
 	buf = malloc(sizeof(char) * 1024);
 	if (buf == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
 		exit(99);
 	}
 	return (buf);
@@ -34,7 +43,7 @@ void close_buffer(const char *filename, int fd)
  *
  * Return: On success 0
  */
-int main(int argc, char argv[])
+int main(int argc, char *argv[])
 {
 	int f_to, f_from, read_bytes, write_bytes;
 	char *buf;
@@ -44,7 +53,7 @@ int main(int argc, char argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	buf = close_buffer(argv[2]);
+	buf = create_buffer(argv[2]);
 	f_from = open(argv[1], O_RDONLY);
 	read_bytes = read(f_from, buf, 1024);
 	f_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
