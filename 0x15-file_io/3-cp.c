@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * close_buffer - a function that closes a file descriptor
+ * close_file - a function that closes a file descriptor
  * @fd: the file descriptor to be closed
  *
  * Returns: close fd on success
@@ -19,7 +19,7 @@ void close_file(int fd)
 
 /**
  * create_buffer - a function that creates buffer
- * @buf: varaiable representation of buffer
+ * @file: varaiable representation of buffer
  *
  * Return: On success buf
  */
