@@ -1,6 +1,6 @@
 #include "main.h"
 /*
- * binary_to_unit - a function that converts a
+ * binary_to_uint - a function that converts a
  * binary number to an unsigned int
  * @b: a pointer to a string of 0 and 1
  * Return: on success converted number on failure 0
@@ -17,7 +17,6 @@ unsigned int binary_to_uint(const char *b)
 
 	while (b[position] != '\0')
 	{
-	
 		if (b[position] != '0' && b[position] != '1')
 		{
 			return (0);
